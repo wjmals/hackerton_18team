@@ -23,11 +23,13 @@ class Home extends StatelessWidget {
           style: TextStyle(color: Colors.green),
         ),
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Center(
-              child: GestureDetector(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
@@ -36,14 +38,55 @@ class Home extends StatelessWidget {
                 },
                 child: Image.network(
                   'https://via.placeholder.com/206x156',
-                  width: 206.13,
-                  height: 155.73,
+                  width: 180.50,
+                  height: 180,
                   fit: BoxFit.fill,
                 ),
               ),
-            ),
-          ],
-        ),
+              SizedBox(width: 20),
+              GestureDetector(
+                onTap: () {
+                  // 처리할 로직 추가
+                },
+                child: Image.network(
+                  'https://via.placeholder.com/206x156',
+                  width: 180.50,
+                  height: 180,
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  // 처리할 로직 추가
+                },
+                child: Image.network(
+                  'https://via.placeholder.com/206x156',
+                  width: 180.50,
+                  height: 180,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              SizedBox(width: 20),
+              GestureDetector(
+                onTap: () {
+                  // 처리할 로직 추가
+                },
+                child: Image.network(
+                  'https://via.placeholder.com/206x156',
+                  width: 180.50,
+                  height: 180,
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.green,
