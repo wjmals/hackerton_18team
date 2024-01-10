@@ -440,9 +440,7 @@ class SecondScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.green,
-        onTap: (index) {
-          // 두 번째 페이지에서 네비게이션 바 탭 시 동작을 추가할 수 있습니다.
-        },
+        onTap: (index) {},
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.restaurant_menu),
