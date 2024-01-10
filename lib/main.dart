@@ -95,55 +95,40 @@ class _HomeState extends State<Home> {
           ),
         ],
       ),
-      bottomNavigationBar: Stack(
-        children: [
-          BottomNavigationBar(
-            selectedItemColor: Colors.green,
-            type: BottomNavigationBarType.fixed,
-            onTap: (index) {
-              setState(() {
-                _currentIndex = index;
-              });
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
 
-              // 여기에서 추가 동작을 수행할 수 있습니다.
-              if (_currentIndex == 0) {
-                // Eco Food를 클릭하면 홈 화면으로 이동
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              } else if (_currentIndex == 1) {
-                // Local Effect를 클릭하면 Third 페이지로 이동
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ThirdScreen()),
-                );
-              }
-            },
-            currentIndex: _currentIndex,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.restaurant_menu),
-                label: 'Eco Food',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.lens_blur),
-                label: 'Local Effect',
-              ),
-            ],
+          // 추가적인 동작을 여기에 구현할 수 있습니다.
+          if (_currentIndex == 0) {
+            // Eco Food를 클릭하면 홈 화면으로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          } else if (_currentIndex == 1) {
+            // Local Effect를 클릭하면 Third 페이지로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ThirdScreen()),
+            );
+          }
+        },
+        currentIndex: _currentIndex,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant_menu),
+            label: 'Eco Food',
           ),
-          // 선택된 아이콘 위에 놓일 원하는 색상의 위젯 추가
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Icon(
-              _currentIndex == 0 ? Icons.restaurant_menu : Icons.lens_blur,
-              color: Colors.green, // 선택된 아이콘의 색상
-            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.lens_blur),
+            label: 'Local Effect',
           ),
         ],
+        selectedItemColor: _currentIndex == 0 ? Colors.green : null,
       ),
     );
   }
@@ -468,55 +453,40 @@ class _SecondScreenState extends State<SecondScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: Stack(
-        children: [
-          BottomNavigationBar(
-            selectedItemColor: Colors.green,
-            type: BottomNavigationBarType.fixed,
-            onTap: (index) {
-              setState(() {
-                _currentIndex = index;
-              });
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
 
-              // 여기에서 추가 동작을 수행할 수 있습니다.
-              if (_currentIndex == 0) {
-                // Eco Food를 클릭하면 홈 화면으로 이동
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              } else if (_currentIndex == 1) {
-                // Local Effect를 클릭하면 Third 페이지로 이동
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ThirdScreen()),
-                );
-              }
-            },
-            currentIndex: _currentIndex,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.restaurant_menu),
-                label: 'Eco Food',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.lens_blur),
-                label: 'Local Effect',
-              ),
-            ],
+          // 추가적인 동작을 여기에 구현할 수 있습니다.
+          if (_currentIndex == 0) {
+            // Eco Food를 클릭하면 홈 화면으로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          } else if (_currentIndex == 1) {
+            // Local Effect를 클릭하면 Third 페이지로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ThirdScreen()),
+            );
+          }
+        },
+        currentIndex: _currentIndex,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant_menu),
+            label: 'Eco Food',
           ),
-          // 선택된 아이콘 위에 놓일 원하는 색상의 위젯 추가
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Icon(
-              _currentIndex == 0 ? Icons.restaurant_menu : Icons.lens_blur,
-              color: Colors.green, // 선택된 아이콘의 색상
-            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.lens_blur),
+            label: 'Local Effect',
           ),
         ],
+        selectedItemColor: _currentIndex == 0 ? Colors.green : null,
       ),
     );
   }
@@ -794,55 +764,40 @@ class _ThirdScreenState extends State<ThirdScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: Stack(
-        children: [
-          BottomNavigationBar(
-            selectedItemColor: Colors.green,
-            type: BottomNavigationBarType.fixed,
-            onTap: (index) {
-              setState(() {
-                _currentIndex = index;
-              });
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
 
-              // 여기에서 추가 동작을 수행할 수 있습니다.
-              if (_currentIndex == 0) {
-                // Eco Food를 클릭하면 홈 화면으로 이동
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home()),
-                );
-              } else if (_currentIndex == 1) {
-                // Local Effect를 클릭하면 Third 페이지로 이동
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => ThirdScreen()),
-                );
-              }
-            },
-            currentIndex: _currentIndex,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.restaurant_menu),
-                label: 'Eco Food',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.lens_blur),
-                label: 'Local Effect',
-              ),
-            ],
+          // 추가적인 동작을 여기에 구현할 수 있습니다.
+          if (_currentIndex == 0) {
+            // Eco Food를 클릭하면 홈 화면으로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          } else if (_currentIndex == 1) {
+            // Local Effect를 클릭하면 Third 페이지로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ThirdScreen()),
+            );
+          }
+        },
+        currentIndex: _currentIndex,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant_menu),
+            label: 'Eco Food',
           ),
-          // 선택된 아이콘 위에 놓일 원하는 색상의 위젯 추가
-          Positioned(
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            child: Icon(
-              _currentIndex == 0 ? Icons.restaurant_menu : Icons.lens_blur,
-              color: Colors.green, // 선택된 아이콘의 색상
-            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.lens_blur),
+            label: 'Local Effect',
           ),
         ],
+        selectedItemColor: _currentIndex == 1 ? Colors.green : null,
       ),
     );
   }
