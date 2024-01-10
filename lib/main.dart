@@ -106,7 +106,16 @@ class _HomeState extends State<Home> {
           // 추가적인 동작을 여기에 구현할 수 있습니다.
           if (_currentIndex == 0) {
             // Eco Food를 클릭하면 홈 화면으로 이동
-            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          } else if (_currentIndex == 1) {
+            // Local Effect를 클릭하면 Third 페이지로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ThirdScreen()),
+            );
           }
         },
         currentIndex: _currentIndex,
@@ -125,7 +134,13 @@ class _HomeState extends State<Home> {
   }
 }
 
-class SecondScreen extends StatelessWidget {
+class SecondScreen extends StatefulWidget {
+  @override
+  _SecondScreenState createState() => _SecondScreenState();
+}
+
+class _SecondScreenState extends State<SecondScreen> {
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -440,7 +455,28 @@ class SecondScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.green,
-        onTap: (index) {},
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+
+          // 추가적인 동작을 여기에 구현할 수 있습니다.
+          if (_currentIndex == 0) {
+            // Eco Food를 클릭하면 홈 화면으로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          } else if (_currentIndex == 1) {
+            // Local Effect를 클릭하면 Third 페이지로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ThirdScreen()),
+            );
+          }
+        },
+        currentIndex: _currentIndex,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.restaurant_menu),
@@ -456,11 +492,313 @@ class SecondScreen extends StatelessWidget {
   }
 }
 
-class Third extends StatelessWidget {
-  const Third({super.key});
+class ThirdScreen extends StatefulWidget {
+  @override
+  _ThirdScreenState createState() => _ThirdScreenState();
+}
 
+class _ThirdScreenState extends State<ThirdScreen> {
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Third Page'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              width: 393,
+              height: 839,
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.949999988079071),
+              ),
+              child: Stack(
+                children: [
+                  Column(
+                    children: [
+                      Positioned(
+                        left: 156,
+                        top: 41,
+                        child: Text(
+                          'Eco Life',
+                          style: TextStyle(
+                            color: Color(0xFF4D9260),
+                            fontSize: 20,
+                            fontFamily: 'JeonjuCraft_Mj_OTF',
+                            fontWeight: FontWeight.w400,
+                            height: 0,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Positioned(
+                    left: 267.01,
+                    top: 879.50,
+                    child: SizedBox(
+                      width: 70,
+                      height: 22,
+                      child: Opacity(
+                        opacity: 0.85,
+                        child: Text(
+                          '14200.00',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                            height: 0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 48.01,
+                    top: 877.50,
+                    child: SizedBox(
+                      width: 72,
+                      height: 23,
+                      child: Opacity(
+                        opacity: 0.85,
+                        child: Text(
+                          '3 Items',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w600,
+                            height: 0,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 0,
+                    top: 839,
+                    child: Container(
+                      width: 418.01,
+                      decoration: ShapeDecoration(
+                        shape: RoundedRectangleBorder(
+                          side: BorderSide(
+                            width: 2,
+                            strokeAlign: BorderSide.strokeAlignCenter,
+                            color: Color(0xFF575757),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 57,
+                    top: 861,
+                    child: SizedBox(
+                      width: 80,
+                      child: Text(
+                        'Eco Food',
+                        style: TextStyle(
+                          color: Color(0xFF7B7B7B),
+                          fontSize: 17,
+                          fontFamily: 'JeonjuCraft_Mj_OTF',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 260,
+                    top: 861,
+                    child: SizedBox(
+                      width: 101,
+                      child: Text(
+                        'Local Effort',
+                        style: TextStyle(
+                          color: Color(0xFF4D9260),
+                          fontSize: 17,
+                          fontFamily: 'JeonjuCraft_Mj_OTF',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 35,
+                    top: 106,
+                    child: GestureDetector(
+                      onTap: () {
+                        // 클릭 시 동작을 추가할 수 있습니다.
+                      },
+                      child: Container(
+                        width: 322,
+                        height: 167,
+                        decoration: ShapeDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                "https://via.placeholder.com/322x167"),
+                            fit: BoxFit.fill,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 35,
+                    top: 287,
+                    child: GestureDetector(
+                      onTap: () {
+                        // 클릭 시 동작을 추가할 수 있습니다.
+                      },
+                      child: Container(
+                        width: 322,
+                        height: 200,
+                        decoration: ShapeDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                "https://via.placeholder.com/322x200"),
+                            fit: BoxFit.fill,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 37,
+                    top: 526,
+                    child: GestureDetector(
+                      onTap: () {
+                        // 클릭 시 동작을 추가할 수 있습니다.
+                      },
+                      child: Container(
+                        width: 322,
+                        height: 230,
+                        decoration: ShapeDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                "https://via.placeholder.com/322x230"),
+                            fit: BoxFit.fill,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 49,
+                    top: 127,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Home()),
+                        );
+                      },
+                      child: Text(
+                        '지구를 \n살리는 \n푸드테크\n',
+                        style: TextStyle(
+                          color: Color(0xFF125023),
+                          fontSize: 30,
+                          fontFamily: 'JeonjuCraft_Mj_OTF',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 55,
+                    top: 315,
+                    child: GestureDetector(
+                      onTap: () {
+                        // 클릭 시 동작을 추가할 수 있습니다.
+                      },
+                      child: Text(
+                        '기후변화\n대응과\n푸드 \n마일리지          \n',
+                        style: TextStyle(
+                          color: Color(0xFF125023),
+                          fontSize: 30,
+                          fontFamily: 'JeonjuCraft_Mj_OTF',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: 51,
+                    top: 511,
+                    child: GestureDetector(
+                      onTap: () {
+                        // 클릭 시 동작을 추가할 수 있습니다.
+                      },
+                      child: Text(
+                        '\n사람, 환경, \n공동체를 \n생각하는\n 먹거리\n\n ',
+                        style: TextStyle(
+                          color: Color(0xFF125023),
+                          fontSize: 30,
+                          fontFamily: 'JeonjuCraft_Mj_OTF',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Colors.green,
+        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+
+          // 추가적인 동작을 여기에 구현할 수 있습니다.
+          if (_currentIndex == 0) {
+            // Eco Food를 클릭하면 홈 화면으로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          } else if (_currentIndex == 1) {
+            // Local Effect를 클릭하면 Third 페이지로 이동
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ThirdScreen()),
+            );
+          }
+        },
+        currentIndex: _currentIndex,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.restaurant_menu),
+            label: 'Eco Food',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.lens_blur),
+            label: 'Local Effect',
+          ),
+        ],
+      ),
+    );
   }
 }
