@@ -13,7 +13,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,6 +98,18 @@ class Home extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.green,
         type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+
+          // 추가적인 동작을 여기에 구현할 수 있습니다.
+          if (_currentIndex == 0) {
+            // Eco Food를 클릭하면 홈 화면으로 이동
+            Navigator.pop(context);
+          }
+        },
+        currentIndex: _currentIndex,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.restaurant_menu),
@@ -421,7 +440,9 @@ class SecondScreen extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.green,
-        type: BottomNavigationBarType.fixed,
+        onTap: (index) {
+          // 두 번째 페이지에서 네비게이션 바 탭 시 동작을 추가할 수 있습니다.
+        },
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.restaurant_menu),
