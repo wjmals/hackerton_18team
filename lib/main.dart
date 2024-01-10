@@ -23,20 +23,26 @@ class Home extends StatelessWidget {
           style: TextStyle(color: Colors.green),
         ),
       ),
-      body: Center(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SecondScreen()),
-            );
-          },
-          child: Image.network(
-            'https://via.placeholder.com/206x156',
-            width: 206.13,
-            height: 155.73,
-            fit: BoxFit.fill,
-          ),
+      body: Container(
+        child: Column(
+          children: [
+            Center(
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondScreen()),
+                  );
+                },
+                child: Image.network(
+                  'https://via.placeholder.com/206x156',
+                  width: 206.13,
+                  height: 155.73,
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
